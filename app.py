@@ -48,8 +48,22 @@ if st.sidebar.button("New Chat"):
 
     st.sidebar.empty() 
 
-st.sidebar.header("Upload Your Document📄")
-uploaded_file = st.sidebar.file_uploader("Upload Document", type=["pdf", "jpg", "jpeg", "png"])
+#st.sidebar.header("Upload Your Document📄")
+#uploaded_file = st.sidebar.file_uploader("Upload Document", type=["pdf", "jpg", "jpeg", "png"])
+
+#if "conversation" not in st.session_state:
+#    st.session_state.conversation = []
+#    st.session_state.pdf_text = ""
+
+#if uploaded_file:
+#    st.session_state.pdf_text = extract_text_from_pdf(uploaded_file)
+#    st.sidebar.success("PDF uploaded and processed successfully!")
+
+st.image("AIDost.jpg", width=80)
+st.title("AI DOST Document Analysis📄")
+#st.write("Upload PDF and ask questions about its content.")
+
+uploaded_file = st.file_uploader("Upload Document", type=["pdf", "jpg", "jpeg", "png"])
 
 if "conversation" not in st.session_state:
     st.session_state.conversation = []
@@ -57,11 +71,7 @@ if "conversation" not in st.session_state:
 
 if uploaded_file:
     st.session_state.pdf_text = extract_text_from_pdf(uploaded_file)
-    st.sidebar.success("PDF uploaded and processed successfully!")
-
-st.image("AIDost.jpg", width=80)
-st.title("AI DOST Document📄")
-st.write("Upload PDF and ask questions about its content.")
+    st.success("PDF uploaded and processed successfully!")
 
 user_query = st.chat_input("Ask a question about the document.")
 
