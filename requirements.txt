@@ -1,6 +1,10 @@
-streamlit
-requests
-azure-ai-formrecognizer
-azure-core
-PyPDF2
+fastapi
+pydantic
 numpy
+faiss-cpu
+boto3
+sentence-transformers
+pymupdf
+requests
+tavily
+uvicorn
